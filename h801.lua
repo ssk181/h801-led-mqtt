@@ -27,11 +27,10 @@ end
 
 function h801SetPin(pin, hex, init)
     local val = h801ConvertHexToPWM(hex)
-    if init == nil then
-        pwm.setduty(pin, val)
-    else
-        pwm.setup(pin, 1000, val)
+    if init then
+        pwm.setup(pin, 1000, 0)
     end
+    pwm.setduty(pin, val)
 end
 
 h801SetRGB(config.h801.default_rgb, true)

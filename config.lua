@@ -6,8 +6,7 @@ config = {
         tmr_retry_ms = 20000
     },
     collectgarbage = {
-        tmr_alarm_id = 1,
-        tmr_run_ms   = 60000
+        ticks = 10,
     },
     mqtt = {
         broker_ip      = "192.168.182.2",
@@ -37,7 +36,7 @@ config = {
         pin_blue           = 6,
         pin_white1         = 5,
         pin_white2         = 4,
-        pin_onboard_red    = 10,
+        pin_onboard_red    = 10, -- It uses for UART0 TX
         pin_onboard_green  = 1,
         default_rgb        = "000000",
         default_w1         = "80",

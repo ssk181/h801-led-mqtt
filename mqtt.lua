@@ -1,6 +1,7 @@
 mqttConnected = false
 mqttQueue = {}
 mqttClimate = {time = tmr.time(), temp = nil, humidity = nil}
+collectgarbageCounter = 0
 
 function mqttMessage(topic, message)
     if mqttConnected then
@@ -60,6 +61,14 @@ function mqttConnect(firstReconnect)
                 elseif (topic_main == config.mqtt.topic_state_memory) then
                     mqttMessage(config.mqtt.topic_state_memory, node.heap())
                 end
+
+                collectgarbageCounter = collectgarbageCounter + 1
+                if collectgarbageCounter > config.collectgarbage.ticks then
+                    collectgarbageCounter = 0
+                    collectgarbage("collect")
+                    print("Collect garbage")
+                end
+
             end)
             mqttClient:connect(config.mqtt.broker_ip, config.mqtt.port, false, false,
                 function(client, reason)
