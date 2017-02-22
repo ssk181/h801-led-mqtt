@@ -11,7 +11,7 @@ Out:
 - /home/iot/{Device-IP}/out/rgb          *- HEX value, for example: FF00FF
 - /home/iot/{Device-IP}/out/w1           *- HEX value, for example: FF
 - /home/iot/{Device-IP}/out/w2           *- HEX value, for example: FF
-- /home/iot/{Device-IP}/out/online       *- ON - connected to MQTT, OFF - desconected (LWT)*
+- /home/iot/{Device-IP}/out/online       *- ON - connected to MQTT, OFF - disconnected (LWT)*
 - /home/iot/{Device-IP}/out/state/uptime *- Uptime in seconds*
 - /home/iot/{Device-IP}/out/state/memory *- Free bytes memory*
 
